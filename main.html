@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Time Left Until the Heat Death of the Universe</title>
+		<style>
+			body {
+				background-image: url("wallpaper.gif");
+				margin: 0px;
+			}
+			#main {
+				color: rgb(234,234,234);
+				text-align: center;
+				font-family: sans-serif;
+
+				width: 90%;
+				height: 20%;
+				
+				position: absolute;
+				left: 5%;
+				top: 40%;
+			}
+			#link {
+				color: rgb(230,230,230);
+				font-family: monospace;
+				text-decoration: none;
+				font-size: 1.35em;
+				
+				position: relative;
+				top: 30px;
+			}
+			#countdown {
+				color: rgb(255,255,255);
+				font-family: monospace;
+				font-size: 2.4em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<div><h1>time left before the heat death of the universe:</h1></div>
+			<div>
+				<h2 id="countdown">
+					<span id="mins">21 minutes</span> <span id="secs">59 seconds</span>
+				</h2>
+			</div>
+			<div>
+				<a id="link" href="about.html" target="_b"><strong>ABOUT</strong></a>
+			</div>
+		</div>
+		
+		<script>
+			//link stuff
+			document.getElementById("link").addEventListener("mouseover", function() {
+				document.getElementById("link").style.color = "white";
+			});
+			document.getElementById("link").addEventListener("mouseout", function() {
+				document.getElementById("link").style.color = "rgb(234,234,234)";
+			});
+			
+			//countdown stuff
+			var end = (new Date().getTime()) + (22*60*1000);
+			
+			var timer = window.setInterval(function() {
+				var now = new Date().getTime();
+				var timeLeft = end - now;
+				
+				var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+				
+				document.getElementById("mins").innerHTML = minutes + " minutes";
+				document.getElementById("secs").innerHTML = seconds + " seconds";
+				
+				if (timeLeft < 0) {
+					window.clearInterval(timer);
+					document.getElementById("countdown").innerHTML = "";
+					
+					window.close();
+				};
+			}, 1000);
+		</script>
+	</body>
+</html>

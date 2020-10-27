@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>About</title>
+		<style>
+			body {
+				background-image: url("wallpaper.gif");
+				margin: 0px;
+			}
+			#main {
+				font-family: sans-serif;
+				padding: 2%;
+				padding-top: 0px;
+				padding-bottom: 3%;
+
+				width: 90%;
+				
+				background-color: black;
+				opacity: 0.8;
+				
+				position: absolute;
+				left: 3%;
+				top: 10%;
+			}
+			.content {
+				color: white;
+				text-align: justify;
+				font-family: monospace;
+				
+				opacity: 0.95;
+			}
+			#link {
+				text-decoration: none;
+				color: rgb(230,230,230);
+				padding-top: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<div>
+				<h1 class="content">Heat Death of the Universe</h1>
+				
+				<p  class="content">The <strong>heat death of the universe</strong> also known as the
+				<strong>Big Chill</strong> or <strong>Big Freeze</strong> is a conjecture
+				on the ultimate fate of the universe, which suggests the universe wuld evolve
+				to a state of no thermodynamic free energy and would therefore be unable to
+				sustain processes that increase entropy. Heat death does not imply any particular
+				absolute temperature, it only requires that temperature differences or other
+				processes may no longer by exploited to perform work. IN the language of Physics,
+				this is when the universe reaches thermodynamic equilibrium.</p>
+				
+				<p  class="content">If the topology of the universe is open or flat, or if dark energy 
+				is a positive cosmological constant (both of which are consistent with current data), 
+				the universe will continue expanding forever, and a heat death is expected to occur,
+				with the universe cooling to approach equilibrium at a very low temperature after 
+				a very long time period.</p>
+				
+				<p  class="content">The hypothesis of heat death stems from the ideas of Lord Kelvin, 
+				who in the 1850s took the theory of heat as mechanical energy loss in nature 
+				(as embodied in the first two laws of thermodynamics) and extrapolated it to 
+				larger processes on a universal scale.</p>
+			</div>
+			<span>
+			<a id="link" href="https://en.wikipedia.org/wiki/Heat_death_of_the_universe#:~:text=
+			The%20heat%20death%20of%20the%20universe%2C%20also%20known%20as%20the,sustain
+			%20processes%20that%20increase%20entropy." target="_b">MORE</a>
+			</span>
+		</div>
+		<script>
+			//link stuff
+			document.getElementById("link").addEventListener("mouseover", function() {
+				document.getElementById("link").style.color = "white";
+			});
+			document.getElementById("link").addEventListener("mouseout", function() {
+				document.getElementById("link").style.color = "rgb(234,234,234)";
+			});
+		</script>
+	</body>
+</html>
